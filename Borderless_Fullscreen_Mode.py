@@ -16,6 +16,7 @@ from PIL import Image
 import sys
 
 CONFIG_FILE = "config.json"
+APP_VERSION = "v0.1.0"
 
 def resource_path(relative_path):
     if hasattr(sys, '_MEIPASS'):
@@ -64,7 +65,7 @@ class FullscreenApp(ctk.CTk):
         self.label = ctk.CTkLabel(self, text="Borderless Fullscreen Mode", font=("맑은 고딕", 20, "bold"))
         self.label.pack(pady=20)
 
-        self.exe_entry = ctk.CTkEntry(self, placeholder_text="exe 이름 (예: Game.exe)", font=font_setting, height=32, width=320)
+        self.exe_entry = ctk.CTkEntry(self, placeholder_text="exe or 창 이름 (예: Game.exe, Game)", font=font_setting, height=32, width=320)
         self.exe_entry.pack(pady=10)
         self.exe_entry.insert(0, self.target_exe)
         self.exe_entry.bind("<FocusOut>", lambda e: self.save_config())
@@ -106,6 +107,9 @@ class FullscreenApp(ctk.CTk):
 
         # 핫키 변경 감지용 타이머
         self.monitor_hotkey_change()
+
+        self.version_label = ctk.CTkLabel(self, text=APP_VERSION)
+        self.version_label.place(relx=1.0, rely=0.0, x=-10, y=5, anchor="ne")
 
     def monitor_hotkey_change(self):
         current_hotkey = self.hotkey_entry.get().strip().upper()
