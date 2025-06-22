@@ -2,7 +2,7 @@
 # Borderless_Fullscreen_Mode / BFM
 
 ## Links
-- [Download](???)
+- [Download](https://github.com/jpda112/Borderless_Fullscreen_Mode/releases/latest)
 
 ## Overview
 ![Image](https://github.com/user-attachments/assets/1fb4e9eb-aa6e-473e-a211-cacbd505537f)
